@@ -103,7 +103,8 @@ Use the `BLANK_README.md` to get started.
 
 ## Video Demo
 
-[![Watch the video]](C:\Users\DELL\Downloads\Dyte_Project.mp4)
+https://github.com/abinetha/Dyte_Project/assets/98078409/d4006e22-cdef-4435-b32c-bf4eaf16964a
+
 
 
 ### Built With
