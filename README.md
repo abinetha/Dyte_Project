@@ -200,10 +200,11 @@ The project should now be running locally. Access the admin panel at http://127.
 **Description:** Use the `/save_json_data/` endpoint to add logs to the system.
 
 **Steps:**
-1. Make a POST request to [http://localhost:3000/save_json_data/](http://localhost:3000/save_json_data/) with your JSON log data.
-2. The system will respond with a success message if the data is saved successfully.
-3. If a duplicate entry is detected, a message indicating the duplication will be returned.
-4. In case of an error, an appropriate error message will be provided.
+1. Make sure to include the json_file_path in the \json_viewer_project\json_viewer\views.py the json file in which you are adding data in the given format.
+2. Make a POST request to [http://localhost:3000/save_json_data/](http://localhost:3000/save_json_data/) with your JSON log data.
+3. The system will respond with a success message if the data is saved successfully.
+4. If a duplicate entry is detected, a message indicating the duplication will be returned.
+5. In case of an error, an appropriate error message will be provided.
 
 **Example using cURL:**
 ```bash
