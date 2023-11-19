@@ -140,7 +140,7 @@ git clone https://github.com/abinetha/Dyte_Project.git
 **Navigate to the project directory:**
 
 ```bash
-cd your-repo
+cd Dyte_Project
 ```
 **Create a virtual environment:**
 ```bash
@@ -163,10 +163,6 @@ pip install -r requirements.txt
 **Run migrations:**
 ```bash
 python manage.py migrate
-```
-**Create a superuser:**
-```bash
-python manage.py createsuperuser
 ```
 **Start the development server:**
 ```bash
@@ -262,7 +258,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 ## Contact
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
