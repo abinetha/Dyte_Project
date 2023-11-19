@@ -1,5 +1,3 @@
-# Dyte_Project
-
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2sZOX9xt)
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
@@ -86,18 +84,19 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+**Log Data Retrieval** is a comprehensive web-based application designed to simplify the retrieval and analysis of log data. The project includes features for searching, filtering, and visualizing log entries, making it an invaluable tool for managing large sets of log data.
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+**Key Features:**
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+**Search Functionality:** Easily search for log entries based on various criteria such as level, message, timestamp, resource ID, and more.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+**Date Range Filtering:** Retrieve log entries within a specific date range to focus on relevant data.
 
-Use the `BLANK_README.md` to get started.
+**Flexible Search Fields:** Choose from a variety of search fields, including level, message, resource ID, timestamp, trace ID, span ID, commit, and parent resource ID.
+
+**JSON Parsing and Database Storage:** Efficiently parse JSON files, store the log data in a MySQL database, and enable seamless retrieval.
+
+**Visualize Data:** View log data in a structured tabular format on the website, providing a user-friendly interface for analysis.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,41 +135,41 @@ Make sure you have the following installed:
 
 **Clone the repository:**
 
-git clone https://github.com/abinetha/your-repo.git
+git clone https://github.com/abinetha/Dyte_Project.git
 
-Navigate to the project directory:
+**Navigate to the project directory:**
 
 ```bash
 cd your-repo
-
-Create a virtual environment:
-
+```
+**Create a virtual environment:**
+```bash
 python -m venv venv
+```
+**Activate the virtual environment:**
 
-Activate the virtual environment:
-
-On Windows:
-
+**On Windows:**
+```bash
 .\venv\Scripts\activate
-
-On macOS/Linux:
-
+```
+**On macOS/Linux:**
+```bash
 source venv/bin/activate
-
-Install dependencies:
-
+```
+**Install dependencies:**
+```bash
 pip install -r requirements.txt
-
-Run migrations:
-
+```
+**Run migrations:**
+```bash
 python manage.py migrate
-
-Create a superuser:
-
+```
+**Create a superuser:**
+```bash
 python manage.py createsuperuser
-
-Start the development server:
-
+```
+**Start the development server:**
+```bash
 python manage.py runserver
 ```
 The project should now be running locally. Access the admin panel at http://127.0.0.1:3000/admin/ and log in with the superuser credentials.
@@ -181,28 +180,43 @@ The project should now be running locally. Access the admin panel at http://127.
 
 **1. Viewing Logs**
 
-Description: The Log Viewer allows you to easily view logs through a web-based interface.
+**Description:** The Log Viewer allows you to easily view logs through a web-based interface.
 
-Steps:
-Open your web browser and navigate to the Log Viewer website ([http://localhost:3000/](url)).
-The main page displays log entries in a tabular format.
-Logs are automatically loaded from the database and updated periodically.
+**Steps:**
+1. Open your web browser and navigate to the Log Viewer website ([http://localhost:3000/](url)).
+2. The main page displays log entries in a tabular format.
+3. Logs are automatically loaded from the database and updated periodically.
 
 **2. Searching Logs**
 
-Description: Use the search functionality to filter logs based on specific criteria.
+**Description:** Use the search functionality to filter logs based on specific criteria.
 
-Steps:
-On the main page, locate the search form.
-Choose a search field from the dropdown menu (e.g., Level, Message, Timestamp).
-Enter the search text in the designated input field.
-Optionally, specify a start and end date for a date range search.
-Click the "Search" button.
-The table will update to display logs that match the specified criteria.
+**Steps:**
+1. On the main page, locate the search form.
+2. Choose a search field from the dropdown menu (e.g., Level, Message, Timestamp).
+3. Enter the search text in the designated input field.
+4. Optionally, specify a start and end date for a date range search.
+5. Click the "Search" button.
+6. The table will update to display logs that match the specified criteria.
 
-**3. Examples**
+**3. Adding Logs**
 
-**Viewing All Logs:**
+**Description:** Use the `/save_json_data/` endpoint to add logs to the system.
+
+**Steps:**
+1. Make a POST request to [http://localhost:3000/save_json_data/](http://localhost:3000/save_json_data/) with your JSON log data.
+2. The system will respond with a success message if the data is saved successfully.
+3. If a duplicate entry is detected, a message indicating the duplication will be returned.
+4. In case of an error, an appropriate error message will be provided.
+
+**Example using cURL:**
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"level": "info", "message": "Log entry content", "timestamp": "2023-11-18T12:00:00Z"}' http://localhost:3000/save_json_data/
+```
+
+**4. Examples**
+
+**Filter Logs:**
 
 To view all logs, simply navigate to the main page of the Log Viewer.
 Searching for Errors:
@@ -215,23 +229,6 @@ Click "Search" to see logs with the "error" level.
 
 Enter a start date and end date in the respective input fields.
 Click "Search" to see logs within the specified date range.
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -266,9 +263,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/A_Abineth) - abineth2004@gmail.com
-
-Project Link: [https://github.com/abinetha/repo_name](https://github.com/your_username/repo_name)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -279,14 +273,9 @@ Project Link: [https://github.com/abinetha/repo_name](https://github.com/your_us
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [Django](https://docs.djangoproject.com/en/4.2/)
+* [Python](https://docs.python.org/3/tutorial/index.html)
+* [MySQL](https://dev.mysql.com/doc/refman/8.2/en/tutorial.html)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -320,9 +309,6 @@ Use this space to list resources you find helpful and would like to give credit 
 [Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
 [Laravel-url]: https://laravel.com
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-
-
-https://github.com/abinetha/Dyte_Project/blob/main/Dyte_Project_video.mp4
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
